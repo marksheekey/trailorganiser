@@ -2,24 +2,26 @@ package co.uk.happyapper.trailorganiser.mainactivity
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import co.uk.happyapper.trailorganiser.mainactivity.AppStatus.gotUser
+import co.uk.happyapper.trailorganiser.mainactivity.AppStatus.noFirebaseUser
+import com.google.firebase.auth.FirebaseUser
 
 class MainActivityViewModel: ViewModel(){
-    private val googleAccount: GoogleSignInAccount? = null
+    private val firebaseUser: FirebaseUser? = null
     val appStatus: MutableLiveData<AppStatus> = MutableLiveData()
 
-    fun setGoogleAccount(account: GoogleSignInAccount?){
-        if(account == null){
-            appStatus.postValue(AppStatus.noGoogleAccount)
+    fun setFirebaseUser(user: FirebaseUser?){
+        if(user == null){
+            appStatus.postValue(noFirebaseUser)
         }else{
-            appStatus.postValue(AppStatus.gotGoogleAccount(account))
+            appStatus.postValue(gotUser(user))
         }
     }
 }
 
 sealed class AppStatus{
-    object noGoogleAccount: AppStatus()
-    data class gotGoogleAccount(val account: GoogleSignInAccount): AppStatus()
+    object noFirebaseUser: AppStatus()
+    data class gotUser(val user: FirebaseUser): AppStatus()
 }
 
 
