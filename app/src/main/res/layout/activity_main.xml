@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/root_view"
     tools:context=".mainactivity.MainActivity">
 
     <LinearLayout
@@ -16,22 +17,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <com.facebook.login.widget.LoginButton
-        android:layout_marginBottom="50dp"
-        android:id="@+id/facebook_login_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <com.google.android.gms.common.SignInButton
-        android:layout_marginTop="50dp"
-        android:id="@+id/google_sign_in_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
 
     </LinearLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"

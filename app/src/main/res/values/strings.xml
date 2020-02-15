@@ -2,8 +2,15 @@
     <string name="app_name">Trail Organiser</string>
     <string name="sign_out">Sign Out</string>
     <!-- Strings related to facebook -->
-    <string name="facebook_app_id">2610006409322895</string>
-    <string name="fb_login_protocol_scheme">fb2610006409322895</string>
+    <string name="facebook_application_id">2610006409322895</string>
+    <string name="facebook_login_protocol_scheme">fb2610006409322895</string>
+    <string name="email_address">Email address</string>
+    <string name="password">Password</string>
+    <string name="sign_in_with_email_address">Sign in with email address</string>
+    <string name="invalid_email">Invalid email address</string>
+    <string name="enter_password">Please enter a password</string>
+    <string name="minimum_letters">Password must be a minimum of 8 characters</string>
+    <string name="login_error">Error logging in</string>
 
 
 </resources>
