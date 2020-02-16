@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Trail Organiser</string>
+    <string name="app_name">Komoonity</string>
     <string name="sign_out">Sign Out</string>
     <!-- Strings related to facebook -->
     <string name="facebook_application_id">2610006409322895</string>
@@ -12,5 +12,11 @@
     <string name="minimum_letters">Password must be a minimum of 8 characters</string>
     <string name="login_error">Error logging in</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sign_in">Sign In</string>
+    <string name="logout_question">Do you want to logout?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 
 </resources>
