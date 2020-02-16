@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import co.uk.happyapper.trailorganiser.R
 import co.uk.happyapper.trailorganiser.global.BaseFragment
-import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment : BaseFragment() {
 
@@ -21,7 +20,7 @@ class MainFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        sign_out_button.setOnClickListener { viewModel.logout() }
+
     }
 
 }
