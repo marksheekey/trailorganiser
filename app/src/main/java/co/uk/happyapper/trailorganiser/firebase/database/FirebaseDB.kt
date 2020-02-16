@@ -7,6 +7,5 @@ class FirebaseDB(val database: FirebaseFirestore) : FirebaseDBInterface {
     override fun addUser(user: FirebaseUser) {
         reference.document("users")
         reference.add(user)
-        //reference.child("users").child(user.id).setValue(user)
     }
 }
