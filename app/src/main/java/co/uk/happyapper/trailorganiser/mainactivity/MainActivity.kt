@@ -13,9 +13,11 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import co.uk.happyapper.trailorganiser.R
 import co.uk.happyapper.trailorganiser.R.string
+import co.uk.happyapper.trailorganiser.mainactivity.AppStatus.errorMessage
 import co.uk.happyapper.trailorganiser.mainactivity.AppStatus.logIn
 import co.uk.happyapper.trailorganiser.mainactivity.AppStatus.logOut
 import co.uk.happyapper.trailorganiser.mainactivity.AppStatus.mainScreen
+import co.uk.happyapper.trailorganiser.mainactivity.AppStatus.webview
 import co.uk.happyapper.trailorganiser.mainactivity.AppStatus.welcomeScreen
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
@@ -48,8 +50,16 @@ class MainActivity : AppCompatActivity() {
                 is welcomeScreen -> welcomeScreen()
                 is logIn -> login()
                 is mainScreen -> mainScreen()
+                is webview -> webpage(it.url)
+                is errorMessage -> errorMessage(it.message)
             }
         })
+    }
+
+    private fun webpage(url: String){
+        val bundle = Bundle()
+        bundle.putString("url",url)
+        nav.navigate(R.id.webviewFragment,bundle)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

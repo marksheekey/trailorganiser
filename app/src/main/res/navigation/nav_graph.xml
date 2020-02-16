@@ -16,4 +16,8 @@
         android:name="co.uk.happyapper.trailorganiser.mainscreen.MainFragment"
         android:label="MainFragment" >
     </fragment>
+    <fragment
+        android:id="@+id/webviewFragment"
+        android:name="co.uk.happyapper.trailorganiser.WebviewFragment"
+        android:label="WebviewFragment" />
 </navigation>

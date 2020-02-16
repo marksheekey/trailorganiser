@@ -18,5 +18,6 @@
     <string name="logout_question">Do you want to logout?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="grant_access">Grant access to your Komoot account</string>
 
 </resources>

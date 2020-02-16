@@ -5,6 +5,7 @@ import co.uk.happyapper.trailorganiser.firebase.database.FirebaseDBInterface
 import co.uk.happyapper.trailorganiser.global.LocalData
 import co.uk.happyapper.trailorganiser.global.LocalDataInterface
 import co.uk.happyapper.trailorganiser.mainactivity.MainActivityViewModel
+import co.uk.happyapper.trailorganiser.mainscreen.MainFragmentViewModel
 import com.google.firebase.firestore.FirebaseFirestore
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -14,4 +15,5 @@ val appModule = module{
     single<LocalDataInterface> { LocalData(androidContext()) }
     single<FirebaseDBInterface> { FirebaseDB(FirebaseFirestore.getInstance()) }
     viewModel { MainActivityViewModel(get(), get()) }
+    viewModel { MainFragmentViewModel(get())}
 }
