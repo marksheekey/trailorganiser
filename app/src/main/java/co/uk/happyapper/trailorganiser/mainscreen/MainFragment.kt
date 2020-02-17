@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import co.uk.happyapper.trailorganiser.BuildConfig
 import co.uk.happyapper.trailorganiser.R
 import co.uk.happyapper.trailorganiser.global.BaseFragment
+import co.uk.happyapper.trailorganiser.komoot.redirect_url
 import kotlinx.android.synthetic.main.main_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -32,7 +33,7 @@ class MainFragment : BaseFragment() {
         }
 
         access_button.setOnClickListener {
-            viewModel.webPage("https://account.komoot.com/authorize?client_id="+ BuildConfig.KomootClientId+"&response_type=code&redirect_uri=YOUR_REDIRECT_URL&scope=profile")
+            viewModel.webPage("https://account.komoot.com/authorize?client_id="+BuildConfig.KomootClientId+"&response_type=code&redirect_uri="+redirect_url+"&scope=profile")
         }
     }
 

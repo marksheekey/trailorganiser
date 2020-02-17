@@ -1,4 +1,4 @@
-package co.uk.happyapper.trailorganiser.webview
+package co.uk.happyapper.trailorganiser.global
 
 import android.content.Context
 import android.content.res.Configuration
@@ -7,9 +7,19 @@ import android.util.AttributeSet
 import android.webkit.WebView
 
 class FixedWebView : WebView {
-    constructor(context: Context) : super(getFixedContext(context)) {}
-    constructor(context: Context, attrs: AttributeSet?) : super(getFixedContext(context), attrs) {}
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(getFixedContext(context), attrs, defStyleAttr) {}
+    constructor(context: Context) : super(
+        getFixedContext(
+            context
+        )
+    ) {}
+    constructor(context: Context, attrs: AttributeSet?) : super(
+        getFixedContext(
+            context
+        ), attrs) {}
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
+        getFixedContext(
+            context
+        ), attrs, defStyleAttr) {}
 
     companion object {
         // To fix Android Lollipop WebView problem create a new configuration on that Android version only

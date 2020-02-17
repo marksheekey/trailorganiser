@@ -14,7 +14,6 @@ import com.google.firebase.auth.FirebaseUser
 
 class MainActivityViewModel(val localData: LocalDataInterface, val firebase: FirebaseDBInterface) :
     ViewModel() {
-    private var  komootUserToken = localData.komootUserToken
     val appStatus: MutableLiveData<AppStatus> = MutableLiveData()
 
     fun setFirebaseUser(user: FirebaseUser?) {
@@ -42,11 +41,6 @@ class MainActivityViewModel(val localData: LocalDataInterface, val firebase: Fir
 
     fun error(message: String){
         appStatus.postValue(errorMessage(message))
-    }
-
-    fun setKomootUserToken(token: String?){
-        localData.komootUserToken = token
-        appStatus.postValue(mainScreen)
     }
 }
 

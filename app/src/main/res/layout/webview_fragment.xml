@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     android:clickable="true"
     android:focusable="true">
-    <co.uk.happyapper.trailorganiser.webview.FixedWebView
+    <co.uk.happyapper.trailorganiser.global.FixedWebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </co.uk.happyapper.trailorganiser.webview.FixedWebView>
+    </co.uk.happyapper.trailorganiser.global.FixedWebView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

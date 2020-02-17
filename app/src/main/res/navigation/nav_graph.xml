@@ -18,6 +18,6 @@
     </fragment>
     <fragment
         android:id="@+id/webviewFragment"
-        android:name="co.uk.happyapper.trailorganiser.WebviewFragment"
+        android:name="co.uk.happyapper.trailorganiser.KomootLoginFragment"
         android:label="WebviewFragment" />
 </navigation>

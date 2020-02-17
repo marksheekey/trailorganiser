@@ -4,16 +4,20 @@ package co.uk.happyapper.trailorganiser
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import co.uk.happyapper.trailorganiser.global.BaseFragment
+import co.uk.happyapper.trailorganiser.komoot.KomootLoginViewModel
+import co.uk.happyapper.trailorganiser.komoot.redirect_url
 import kotlinx.android.synthetic.main.webview_fragment.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class WebviewFragment : BaseFragment() {
+class KomootLoginFragment : BaseFragment() {
+
+    private val thisViewModel: KomootLoginViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,28 +38,19 @@ class WebviewFragment : BaseFragment() {
     }
 
     private val mWebViewClient = object : WebViewClient() {
-        override fun onPageFinished(view: WebView?, url: String?) {
-            super.onPageFinished(view, url)
-        }
-
-        override fun shouldOverrideKeyEvent(view: WebView?, event: KeyEvent?): Boolean {
-            return super.shouldOverrideKeyEvent(view, event)
-        }
 
         override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
             Log.i("webpage",url+"")
             url?.let {
-                if(url.contains("YOUR_REDIRECT_URL") && !url.contains("facebook.com")){
+                if(url.contains(redirect_url) && !url.contains("facebook.com")){
                     val uri = Uri.parse(url)
                     uri.getQueryParameter("code")?.let{
-                        viewModel.setKomootUserToken(it)
+                        thisViewModel.gotUserToken(it)
                     }
                     uri.getQueryParameter("error")?.let{
                         uri.getQueryParameter("error_description")?.let{
-                            viewModel.setKomootUserToken(null)
                             viewModel.error(it)
                         }
-
                     }
                     return true
                 }
