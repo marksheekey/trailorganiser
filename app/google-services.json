@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1032230999281",
+    "firebase_url": "https://trailorganiser-1581765662729.firebaseio.com",
+    "project_id": "trailorganiser-1581765662729",
+    "storage_bucket": "trailorganiser-1581765662729.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1032230999281:android:0679a82c7f543725fbc550",
+        "android_client_info": {
+          "package_name": "co.uk.happyapper.trailorganiser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1032230999281-du72m39otnkpjqip2ri5bdrqriqjimdf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.uk.happyapper.trailorganiser",
+            "certificate_hash": "7b2be682acf42aaeab6ca30e9349f1ac4c8ce913"
+          }
+        },
+        {
+          "client_id": "1032230999281-s0de5k1p0i905tglsnr32bpmqlqdhjod.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA42e-QiCPa8ONpJFTWdehtK2SQ_AgmULY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1032230999281-s0de5k1p0i905tglsnr32bpmqlqdhjod.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
