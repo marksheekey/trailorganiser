@@ -19,8 +19,8 @@ android {
     buildTypes {
 
         buildTypes.each {
-            it.buildConfigField 'String', 'KomootClientId',komoot_client_id
-            it.buildConfigField 'String', 'KomootClientSecret',komoot_client_secret
+            it.buildConfigField 'String', 'KomootClientId',System.getenv("komoot_client_id")
+            it.buildConfigField 'String', 'KomootClientSecret',System.getenv("komoot_client_secret")
         }
 
         release {
