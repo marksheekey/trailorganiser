@@ -1,6 +1,5 @@
 package co.uk.happyapper.trailorganiser.komoot
 
-import android.provider.Telephony.Carriers.BEARER
 import com.google.common.net.HttpHeaders.AUTHORIZATION
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
@@ -45,7 +44,7 @@ class KomootAuthService(private val komootData: KomootDataInterface ) {
             if (username != null && password != null) {
                 builder.header("Authorization", Credentials.basic(username.orEmpty(), password))
             } else if (!komootData.refresh_token.isNullOrBlank()) {
-                builder.header(AUTHORIZATION, BEARER + " ${komootData.refresh_token}")
+                //   builder.header(AUTHORIZATION, BEARER + " ${komootData.refresh_token}")
             }
             return chain.proceed(builder.build())
         }
