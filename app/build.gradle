@@ -17,15 +17,15 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
-
-        buildTypes.each {
-            //it.buildConfigField 'String', 'KomootClientId',System.getenv("komoot_client_id")
-            //it.buildConfigField 'String', 'KomootClientSecret',System.getenv("komoot_client_secret")
-            it.buildConfigField 'String', 'KomootClientId',komoot_client_id
-            it.buildConfigField 'String', 'KomootClientSecret',komoot_client_secret
+        debug {
+            buildConfigField 'String', 'KomootClientId', komoot_client_id
+            buildConfigField 'String', 'KomootClientSecret', komoot_client_secret
         }
-
         release {
+            if (System.getenv("komoot_client_id") != null) {
+            buildConfigField 'String', 'KomootClientId', System.getenv("komoot_client_id")
+            buildConfigField 'String', 'KomootClientSecret', System.getenv("komoot_client_secret")
+             }
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
